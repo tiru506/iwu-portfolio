@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" data-qb-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artifacts - Tirumala Raju Killamsetti</title>
+    <link rel="stylesheet" href="./resources/main.css">
+    <link href="./resources/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/all.min.css">
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInFromLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideInFromRight {
+        from {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+    }
+
+    .animate-on-scroll.animate-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .link-card:nth-child(odd) {
+        animation: slideInFromLeft 0.6s ease forwards;
+    }
+
+    .link-card:nth-child(even) {
+        animation: slideInFromRight 0.6s ease forwards;
+    }
+
+    .artifact-card {
+        animation: fadeIn 0.6s ease forwards;
+    }
+
+    /* Hover effects */
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .link-card:hover,
+    .artifact-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Loading states */
+    .loading {
+        opacity: 0.7;
+        pointer-events: none;
+    }
+
+    /* Focus states for accessibility */
+    .btn:focus,
+    .nav-link:focus,
+    .filter-btn:focus {
+        outline: 2px solid #2563eb;
+        outline-offset: 2px;
+    }
+
+    /* Print styles */
+    @media print {
+        .navbar,
+        .footer,
+        .hero-buttons,
+        .artifact-links,
+        .project-links {
+            display: none !important;
+        }
+
+        .hero {
+            background: white !important;
+            color: black !important;
+        }
+
+        .page-header {
+            background: white !important;
+            color: black !important;
+        }
+    }
+</style></head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" style="background: rgb(255, 255, 255); backdrop-filter: none;">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="https://tiru506.github.io/portfolio-artifacts/bio.html">Tirumala Raju Killamsetti</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="https://tiru506.github.io/portfolio-artifacts/index.html" class="nav-link active">Welcome</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tiru506.github.io/portfolio-artifacts/bio.html" class="nav-link">Bio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tiru506.github.io/portfolio-artifacts/artifacts.html" class="nav-link">Artifacts</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Artifacts Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">My Artifacts</h1>
+            <p class="page-subtitle">Projects, assignments, and work samples</p>
+        </div>
+    </section>
+
+    <!-- Artifacts Content -->
+    <section class="artifacts-content">
+        <div class="container">
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="reflections">Reflections &amp; Discussions</button>
+            </div>
+
+            <!-- Artifacts Grid -->
+            <div class="artifacts-grid">
+                
+
+                <!-- AI Evolution Timeline -->
+                <div class="artifact-card animate-on-scroll animate-in" data-category="academic ai-ml" style="animation-delay: 0.1s;">
+                    <div class="artifact-image">
+                        <i class="fas fa-timeline"></i>
+                    </div>
+                    <div class="artifact-content">
+                        <h3>AI Evolution Timeline</h3>
+                        <p class="artifact-category">Academic | Presentation</p>
+                        <p class="artifact-description">
+                            A comprehensive timeline presentation showcasing the evolution of artificial 
+                            intelligence from its inception to modern advancements.
+                        </p>
+                        <div class="artifact-tech">
+                            <span class="tech-tag">knightlab</span>
+                            <span class="tech-tag">Research</span>
+                            <span class="tech-tag">Presentation</span>
+                        </div>
+                        <div class="artifact-links">
+                            <a href="https://tiru506.github.io/iwu-portfolio/artifacts/AIevolution.html" class="btn btn-primary">View Details</a>
+                            <a href="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vRmP5ib7lZOMREODJ6NBsWPb9LrHsdxcHz8h_hkHPb4-MTdTOXowX9TryHlZ2YKMEi9pPLxCFJxii5L&font=Default&lang=en&initial_zoom=2&width=100%25&height=650 " download="" class="btn btn-secondary">Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- College Assistant Chatbot -->
+                <div class="artifact-card animate-on-scroll animate-in" data-category="academic ai-ml" style="animation-delay: 0.2s;">
+                    <div class="artifact-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="artifact-content">
+                        <h3>AI Fraud Detection Assistant</h3>
+                        <p class="artifact-category">Academic Project | AI/ML</p>
+                        <p class="artifact-description">
+                            This AI assistant helps users understand digital payment fraud detection, machine learning techniques used in fraud prevention, and financial security practices.
+                        </p>
+                        <div class="artifact-tech">
+                            <span class="tech-tag">Mizou</span>
+                            <span class="tech-tag">AI</span>
+                        </div>
+                        <div class="artifact-links">
+                            <a href="https://tiru506.github.io/iwu-portfolio/artifacts/chatbot-college-assistant.html" class="btn btn-primary">View Details</a>
+                            <a href="https://mizou.com/login-thread?ID=Ph5QDMBiDWtUAgIG1Oldr6To3tJZ1L11-H5SylAqIgk-120752/" target="_blank" class="btn btn-secondary">Live</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discussions & Reflections Collection -->
+                <div class="artifact-card animate-on-scroll" data-category="academic reflections ai-ml" style="animation-delay: 0.3s;">
+                    <div class="artifact-image">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="artifact-content">
+                        <h3>Discussions &amp; Reflections</h3>
+                        <p class="artifact-category">Academic Discussions | Critical Thinking</p>
+                        <p class="artifact-description">
+                            A collection of my academic discussions and reflections showcasing critical thinking, 
+                            course concept application, and intellectual growth throughout my AI/ML learning journey.
+                        </p>
+                        <div class="artifact-tech">
+                            <span class="tech-tag">Critical Thinking</span>
+                            <span class="tech-tag">Analysis</span>
+                            <span class="tech-tag">Reflection</span>
+                        </div>
+                        <div class="artifact-links">
+                            <a href="https://tiru506.github.io/iwu-portfolio/discussions.html" class="btn btn-primary">View Discussions</a>
+                            <a href="https://tiru506.github.io/iwu-portfolio/discussions.html" class="btn btn-secondary">Explore Collection</a>
+                        </div>
+                    </div>
+                </div>
+
+               
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tirumala Raju Killamsetti</h3>
+                    <p>AI/ML Student &amp; Enthusiast</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/tirumala-raju-killamsetti/" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/tiru506" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Tirumala Raju Killamsetti. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./resources/main.js.download"></script>
+
+ </body></html>
