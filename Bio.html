@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://electricshadow2k19.github.io/portfolio/bio.html -->
+<html lang="en" data-qb-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio - Tirumala Raju Killamsetti</title>
+    <link rel="stylesheet" href="./resources/main.css">
+    <link href="./resources/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/all.min.css">
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInFromLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideInFromRight {
+        from {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+    }
+
+    .animate-on-scroll.animate-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .link-card:nth-child(odd) {
+        animation: slideInFromLeft 0.6s ease forwards;
+    }
+
+    .link-card:nth-child(even) {
+        animation: slideInFromRight 0.6s ease forwards;
+    }
+
+    .artifact-card {
+        animation: fadeIn 0.6s ease forwards;
+    }
+
+    /* Hover effects */
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .link-card:hover,
+    .artifact-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Loading states */
+    .loading {
+        opacity: 0.7;
+        pointer-events: none;
+    }
+
+    /* Focus states for accessibility */
+    .btn:focus,
+    .nav-link:focus,
+    .filter-btn:focus {
+        outline: 2px solid #2563eb;
+        outline-offset: 2px;
+    }
+
+    /* Print styles */
+    @media print {
+        .navbar,
+        .footer,
+        .hero-buttons,
+        .artifact-links,
+        .project-links {
+            display: none !important;
+        }
+
+        .hero {
+            background: white !important;
+            color: black !important;
+        }
+
+        .page-header {
+            background: white !important;
+            color: black !important;
+        }
+    }
+</style></head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" style="background: rgb(255, 255, 255); backdrop-filter: none;">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="https://tiru506.github.io/portfolio-artifacts/bio.html">Tirumala Raju Killamsetti</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="https://tiru506.github.io/portfolio-artifacts/index.html" class="nav-link active">Welcome</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tiru506.github.io/portfolio-artifacts/bio.html" class="nav-link">Bio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tiru506.github.io/portfolio-artifacts/artifacts.html" class="nav-link">Artifacts</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Bio Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">About Me</h1>
+            <p class="page-subtitle">Get to know me better</p>
+        </div>
+    </section>
+
+    <!-- Bio Content -->
+    <section class="bio-content">
+        <div class="container">
+            <div class="bio-grid">
+                <!-- Personal Info -->
+                <div class="bio-card animate-in">
+                    <div class="bio-header">
+                        <div class="profile-image">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="profile-info">
+                            <h2>Tirumala Raju Killamsetti</h2>
+                            <p class="title">Sr. Specilaist - Sofwate Development & Engineering &amp; AI/ML Student</p>
+                            <p class="location"><i class="fas fa-map-marker-alt"></i> United States</p>
+                            <p class="contact"><i class="fas fa-envelope"></i> tiru506@gmail.com</p>
+                            <p class="contact"><i class="fas fa-phone"></i> +1-469-924-5887</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Me -->
+                <div class="bio-card animate-in">
+                    <h3><i class="fas fa-user"></i> About Me</h3>
+                    <p>
+						I am a skilled IT Professional with 17+ years of IT Experience using Microsoft technologies stack, architecture, designing and development of project based on the functional & non-functional requirements.
+                        My expertise spans across web-based and client-server applications, with deep knowledge of all stages of software development
+                        activities throughout the software development life cycle (SDLC).
+                    </p>
+                    <p>
+                        Currently pursuing AI/ML studies at Indiana Wesleyan University, I'm passionate about combining my 
+                        extensive DevOps and testing experience with cutting-edge artificial intelligence technologies. My 
+                        academic focus includes understanding AI evolution, machine learning fundamentals, and developing 
+                        practical AI applications.
+                    </p>
+                    <p>
+                        I specialize in developing web-based AI applications, including chatbots and intelligent systems, 
+                        leveraging my background in automation frameworks, cloud platforms, and modern web technologies to 
+                        create innovative solutions.
+                    </p>
+                </div>
+
+                <!-- Education -->
+                <div class="bio-card animate-in">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="education-item">
+                        <h4>Master of Science - AI - Data Analytics Specialization</h4>
+                        <p class="institution">Indiana Wesleyan University</p>
+                        <p class="period">Jan 2026 - Present</p>
+                        <p class="description">
+                            Advanced program focusing on artificial intelligence and data analytics. Currently maintaining a 4.0 GPA.
+                        </p>
+                        <div class="academic-progress">
+                            <div class="progress-item completed">
+                                <strong>✅ Completed:</strong> DTAN-500 Foundations of Data Analytics (Grade: A)
+                            </div>
+                            <div class="progress-item in-progress">
+                                <strong>🔄 In Progress:</strong> AIML-500 Machine Learning Fundamentals
+                            </div>
+                            <div class="progress-item planned">
+                                <strong>📋 Planned:</strong> <span class="course-toggle" onclick="toggleCourses()">8 additional courses across AI and Data Analytics specializations <i class="fas fa-chevron-down"></i></span>
+                            </div>
+                        </div>
+                        <div class="planned-courses" id="plannedCourses">
+                            <div class="course-category">
+                                <h5><i class="fas fa-robot"></i> AI Major Requirements</h5>
+                                <ul class="course-list">
+                                    <li><strong>AIML-505:</strong> Large Language Models/Generative AI (3FA2025)</li>
+                                    <li><strong>AIML-501:</strong> Model Development (3WI2026)</li>
+                                    <li><strong>AIML-510:</strong> Responsible Applications of AI (3SU2026)</li>
+                                    <li><strong>AIML-515:</strong> AI Integration Capstone (3FA2026)</li>
+                                </ul>
+                            </div>
+                            <div class="course-category">
+                                <h5><i class="fas fa-chart-bar"></i> Data Analytics Specialization</h5>
+                                <ul class="course-list">
+                                    <li><strong>DTAN-505:</strong> Data Visualization (3FA2025)</li>
+                                    <li><strong>DTAN-515:</strong> Big Data (3WI2026)</li>
+                                    <li><strong>DTAN-520:</strong> Text Mining (3SU2026)</li>
+                                    <li><strong>DTAN-525:</strong> Data Mining Concepts (3FA2026)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <h4>Bachelor's in Computer Science</h4>
+                        <p class="institution">Andhra University-Visakhapatnam, India</p>
+                        <p class="period">2001</p>
+                        <p class="description">
+                            Foundation in computer science principles, programming, and software development methodologies.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Skills -->
+                <div class="bio-card animate-in">
+                    <h3><i class="fas fa-tools"></i> Skills &amp; Expertise</h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>DevOps &amp; Cloud</h4>
+                            <ul class="skills-list">
+                                <li>Azure, GCP</li>
+                                <li>Docker, Kubernetes</li>
+                                <li>Git, Harness CI/CD Pipelines</li>
+                                <li>Terraform Infrastructure as Code</li>
+                                <li>Git &amp; GitHub</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Testing &amp;</h4>
+                            <ul class="skills-list">
+                                <li>API Testing (Postman, SOAP UI)</li>
+                                <li>Unit Testing</li>
+                                <li>Cross-browser Testing</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Programming &amp; Databases</h4>
+                            <ul class="skills-list">
+                                <li>.NET , C# &amp; ASP.NET </li>
+                                <li>JavaScript, HTML, CSS</li>
+                                <li>Aerospike, SQL server, DB2 &amp; Oracle</li>
+                                <li>Shell Scripting</li>
+                                <li>AI/ML Fundamentals</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="bio-card animate-in" id="certifications">
+                    <h3><i class="fas fa-certificate"></i> Professional Certifications</h3>
+                    <div class="certifications-grid">
+                        <div class="certification-item">
+                            <div class="certification-logo">
+                                <i class="fas fa-snowflake"></i>
+                            </div>
+                            <div class="certification-content">
+                                <h4>Microsoft Technology Specialist 070 – 528 and 70-536</h4>
+                                <p class="certification-issuer">Microsoft</p>
+                                <p class="certification-status status-active">Active</p>
+                                <p class="certification-date">Issued: 2009</p>
+                                <p class="certification-description">
+                                    Microsoft .NET technologies
+                                </p>
+                            </div>
+                        </div>
+                        <div class="certification-item">
+                            <div class="certification-logo">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="certification-content">
+                                <h4>AZ-900 Microsoft Azure Fundamentals</h4>
+                                <p class="certification-issuer">Microsoft</p>
+                                <p class="certification-status status-active">Active</p>
+                                <p class="certification-date">Issued: 2022</p>
+                                <p class="certification-description">
+                                    Microsoft Azure Fundamentals.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="certification-item">
+                            <div class="certification-logo">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="certification-content">
+                                <h4>AZ-204 Azure Developer Associate</h4>
+                                <p class="certification-issuer">Microsoft</p>
+                                <p class="certification-status status-active">Active</p>
+                                <p class="certification-date">Issued: 2022</p>
+                                <p class="certification-description">
+                                    Azure Developer Associate.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="certification-item">
+                            <div class="certification-logo">
+                                <i class="fas fa-snowflake"></i>
+                            </div>
+                            <div class="certification-content">
+                                <h4>SC-900 Microsoft Security, Compliance, and Identity Fundamentals</h4>
+                                <p class="certification-issuer">Microsoft</p>
+                                <p class="certification-status status-active">Active</p>
+                                <p class="certification-date">Issued: 2022</p>
+                                <p class="certification-description">
+                                    Microsoft Security, Compliance, and Identity Fundamentals.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Value Proposition -->
+                <div class="bio-card animate-in">
+                    <h3><i class="fas fa-bullseye"></i> Personal Value Proposition</h3>
+                    <p>
+                        I bring a unique combination of <strong>17+ years of DevOps and software testing expertise</strong> 
+                        combined with <strong>current AI/ML education</strong>, positioning me as a bridge between traditional 
+                        software development and cutting-edge artificial intelligence technologies.
+                    </p>
+                    <p>
+                        My value lies in the ability to <strong>implement AI solutions within existing DevOps pipelines</strong>, 
+                        create <strong>intelligent automation systems</strong> for testing and deployment, and develop 
+                        <strong>secure, scalable AI applications</strong> that integrate seamlessly with enterprise infrastructure.
+                    </p>
+                    <p>
+                        This rare combination of <strong>practical DevOps experience</strong> and <strong>academic AI/ML knowledge</strong> 
+                        makes me uniquely qualified to help organizations transition from traditional software development 
+                        to AI-enhanced, intelligent systems while maintaining security, reliability, and operational excellence.
+                    </p>
+                </div>
+
+                <!-- Goals -->
+                <div class="bio-card animate-in">
+                    <h3><i class="fas fa-target"></i> Goals &amp; Aspirations</h3>
+                    <p>
+                        My primary goal is to leverage my extensive DevOps and testing experience to advance in the 
+                        field of artificial intelligence and machine learning, creating innovative solutions that 
+                        bridge traditional software development with cutting-edge AI technologies. I aim to:
+                    </p>
+                    <ul class="goals-list">
+                        <li>Master fundamental ML algorithms and integrate them with DevOps practices</li>
+                        <li>Develop AI-powered automation solutions for testing and deployment</li>
+                        <li>Create intelligent systems that enhance cybersecurity and quality assurance</li>
+                        <li>Stay updated with the latest advancements in AI/ML and DevOps technologies</li>
+                        <li>Build a portfolio demonstrating the convergence of AI and DevOps</li>
+                        <li>Contribute to the development of ethical and secure AI systems</li>
+                        <li>Mentor and collaborate with teams on AI/ML implementation strategies</li>
+                    </ul>
+                </div>
+
+
+
+                <!-- Contact -->
+                <div class="bio-card">
+                    <h3><i class="fas fa-envelope"></i> Get In Touch</h3>
+                    <p>
+                        I'm always interested in connecting with fellow technology professionals, potential collaborators, 
+                        and anyone who shares a passion for DevOps, AI/ML, and innovative technology solutions.
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:tiru506@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i> Email Me
+                        </a>
+                        <a href="https://wa.me/14699245887" target="_blank" class="contact-link">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="https://www.linkedin.com/in/tirumala-raju-killamsetti/" target="_blank" class="contact-link">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tirumala Raju Killamsetti</h3>
+                    <p>AI/ML Student &amp; Enthusiast</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/tirumala-raju-killamsetti/" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/tiru506" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Tirumala Raju Killamsetti. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleCourses() {
+            const coursesDiv = document.getElementById('plannedCourses');
+            const toggleSpan = document.querySelector('.course-toggle');
+            
+            if (coursesDiv.classList.contains('show')) {
+                coursesDiv.classList.remove('show');
+                toggleSpan.classList.remove('active');
+            } else {
+                coursesDiv.classList.add('show');
+                toggleSpan.classList.add('active');
+            }
+        }
+    </script>
+    <script src="./resoures/main.js.download"></script>
+
+ </body></html>

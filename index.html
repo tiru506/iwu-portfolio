@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://electricshadow2k19.github.io/portfolio/index.html -->
+<html lang="en" data-qb-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Tirumala Raju Killamsetti - Portfolio</title>
+    <link rel="stylesheet" href="./resources/main.css">
+    <link href="./resources/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/all.min.css">
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideInFromLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes slideInFromRight {
+        from {
+            opacity: 0;
+            transform: translateX(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+    }
+
+    .animate-on-scroll.animate-in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .link-card:nth-child(odd) {
+        animation: slideInFromLeft 0.6s ease forwards;
+    }
+
+    .link-card:nth-child(even) {
+        animation: slideInFromRight 0.6s ease forwards;
+    }
+
+    .artifact-card {
+        animation: fadeIn 0.6s ease forwards;
+    }
+
+    /* Hover effects */
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .link-card:hover,
+    .artifact-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Loading states */
+    .loading {
+        opacity: 0.7;
+        pointer-events: none;
+    }
+
+    /* Focus states for accessibility */
+    .btn:focus,
+    .nav-link:focus,
+    .filter-btn:focus {
+        outline: 2px solid #2563eb;
+        outline-offset: 2px;
+    }
+
+    /* Print styles */
+    @media print {
+        .navbar,
+        .footer,
+        .hero-buttons,
+        .artifact-links,
+        .project-links {
+            display: none !important;
+        }
+
+        .hero {
+            background: white !important;
+            color: black !important;
+        }
+
+        .page-header {
+            background: white !important;
+            color: black !important;
+        }
+    }
+</style></head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" style="background: rgb(255, 255, 255); backdrop-filter: none;">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="https://tiru506.github.io/portfolio-artifacts/bio.html">Tirumala Raju Killamsetti</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="https://tiru506.github.io/portfolio-artifacts/index.html" class="nav-link active">Welcome</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tiru506.github.io/portfolio-artifacts/bio.html" class="nav-link">Bio</a>
+                </li>
+                <li class="nav-item">
+                    <a href="https://tiru506.github.io/portfolio-artifacts/artifacts.html" class="nav-link">Artifacts</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to My Portfolio</h1>
+                <p class="hero-subtitle">AI/ML Enthusiast | Student | Innovator</p>
+                <p class="hero-description">
+                    Exploring the fascinating world of Artificial Intelligence and Machine Learning. 
+                    Passionate about creating innovative solutions and contributing to the future of technology.
+                </p>
+                <div class="hero-buttons">
+                    <a href="https://tiru506.github.io/portfolio-artifacts/bio.html" class="btn btn-primary">Learn More About Me</a>
+                    <a href="https://tiru506.github.io/portfolio-artifacts/artifacts.html" class="btn btn-secondary">View My Work</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-placeholder">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links">
+        <div class="container">
+            <h2 class="section-title">Quick Navigation</h2>
+            <div class="links-grid">
+                <div class="link-card animate-on-scroll animate-in" style="animation-delay: 0s;">
+                    <div class="link-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>About Me</h3>
+                    <p>Learn about my background, education, and interests</p>
+                    <a href="https://tiru506.github.io/portfolio-artifacts/bio.html" class="link-btn">View Bio</a>
+                </div>
+                <div class="link-card animate-on-scroll animate-in" style="animation-delay: 0.1s;">
+                    <div class="link-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>My Projects</h3>
+                    <p>Explore my academic and personal projects</p>
+                    <a href="https://tiru506.github.io/portfolio-artifacts/artifacts.html" class="link-btn">View Artifacts</a>
+                </div>
+                <div class="link-card animate-on-scroll animate-in" style="animation-delay: 0.2s;">
+                    <div class="link-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Academic Work</h3>
+                    <p>Check out my coursework and research</p>
+                    <a href="https://tiru506.github.io/portfolio-artifacts/artifacts.html#academic" class="link-btn">View Work</a>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tirumala Raju Killamsetti</h3>
+                    <p>AI/ML Student &amp; Enthusiast</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/tirumala-raju-killamsetti/" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/tiru506" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Tirumala Raju Killamsetti. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./resources/main.js.download"></script>
+
+ </body></html>
