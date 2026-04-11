@@ -131,26 +131,30 @@
                     </div>
                 </div>
 
-                <!-- Embedded Presentation -->
+                <!-- Embedded DOCX via Office Online with fallback -->
                 <div class="artifact-section">
                     <h3><i class="fas fa-presentation"></i>Problems Of Confusion</h3>
                     <div class="presentation-container">
                         <div class="presentation-viewer">
                             <div class="presentation-frame">
                                 <iframe id="presentation-iframe"
-                                        src="https://view.officeapps.live.com/op/embed.aspx?src=https://tiru506.github.io/iwu-portfolio/Problems-of-Confusion.docx"
+                                        src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Ftiru506.github.io%2Fiwu-portfolio%2Fproblems-of-confusion.docx"
                                         width="100%"
-                                        height="600px"
+                                        height="700"
                                         frameborder="0"
                                         allowfullscreen
                                         onload="presentationLoaded()"
                                         onerror="presentationError()">
                                 </iframe>
-                                <div id="presentation-fallback" class="presentation-fallback" style="display: none;">
-                                    <h4><i class="fas fa-exclamation-triangle"></i> Presentation Viewer Unavailable</h4>
-                                    <p>The PowerPoint presentation viewer is currently unavailable. Please use the download option below to view the presentation.</p>
-                                    <a href="../GroupB_AdaptiveLearning_2.4.pptx" download class="btn btn-primary">
-                                        <i class="fas fa-download"></i> Download Image
+
+                                <div id="presentation-fallback" class="presentation-fallback" style="display:none; margin-top:0.75rem;">
+                                    <h4><i class="fas fa-exclamation-triangle"></i> Document viewer unavailable</h4>
+                                    <p>The document could not be embedded. Use one of the links below to download or open it.</p>
+                                    <a href="https://tiru506.github.io/iwu-portfolio/problems-of-confusion.docx" download class="btn btn-primary">
+                                        <i class="fas fa-download"></i> Download DOCX
+                                    </a>
+                                    <a href="https://tiru506.github.io/iwu-portfolio/problems-of-confusion.docx" target="_blank" class="btn btn-secondary">
+                                        <i class="fas fa-external-link-alt"></i> Open in new tab
                                     </a>
                                 </div>
                             </div>
@@ -276,4 +280,4 @@
 
     <script src="../resources/main.js"></script>
 </body>
-</html> 
+</html>
