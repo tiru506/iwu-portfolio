@@ -89,9 +89,9 @@
                 <div class="discussion-section">
                     <h2>Discussion Prompt</h2>
                     <div class="prompt-card">
-                        <p>In the credit card fraud detection project, the model focused more on recall instead of accuracy because missing fraud cases can cause serious problems. At the same time, there are challenges like data imbalance, bias, and privacy concerns.</p>
-                        <p>Based on this, do you think it is more important for a machine learning model to be accurate or to reduce real-world risks (like catching fraud)? Why?</p>
-                        <p>Also, how can companies like IBM, Google, or platforms like Kaggle make sure their models are not only effective but also fair and transparent?</p>
+                        <p>Write a newsletter explaining how AI is used in real-world businesses today. Focus on three industries such as healthcare, finance, and retail. For each, include a company example and describe how AI improves processes and decision-making.</p>
+                        <p>Use simple language and recent real-world examples. Organize with a title, introduction, clear sections, and a conclusion. Include a small visual or summary.</p>
+                        <p>In the end, briefly discuss the impact, benefits, and challenges of AI in business.</p>
                     </div>
                 </div>
 
@@ -129,55 +129,63 @@
 
                
                 <div class="discussion-section">
-                    <h2>Real-World Machine Learning Project Analysis: Credit Card Fraud Detection</h2>
+                    <h2>AI in Action: How Artificial Intelligence is Changing Businesses Today</h2>
                     <div class="outcomes-card">
 
                         <h3></h3>
-                        <p>For this assignment, I reviewed a real-world machine learning case study on credit card fraud detection published by IBM and supported by research practices discussed in Kaggle datasets. Fraud detection is a strong example because it involves real-time decision making, high class imbalance, and serious ethical concerns. This makes it a good case to evaluate both technical and ethical aspects of machine learning.</p>
+                        <p>Artificial Intelligence is no longer just a future idea. It is already being used by many companies to improve how they work, make decisions, and serve customers. In the past one month, there have been several updates that show how AI is becoming a key part of business operations across different industries. In this newsletter, I will focus on three industries where AI is making a strong impact right now: healthcare, finance, and retail. These examples show how AI is not just improving efficiency, but also changing how decisions are made.</p>
 
-                        <h3>Data Cleaning and Preparation</h3>
+
+                        <h3>Overview of Industries</h3>
+                        <p>The three industries I selected are healthcare, finance, and retail. These industries are important because they affect everyday life and handle large amounts of data. AI is helping them become faster, more accurate, and more customer focused.</p>
+
+                        <h3>Healthcare: Smarter Diagnosis and Patient Care</h3>
+                        <p>In healthcare, AI is being used to improve diagnosis and patient care. Companies like Google DeepMind are developing AI systems that can analyze medical images and detect diseases earlier than traditional methods.</p>
+                        <p>For example, AI tools are now being used to detect conditions like cancer by analyzing scans. This helps doctors make faster and more accurate decisions. Instead of manually reviewing every image, AI can highlight areas of concern, saving time and reducing human error.</p>
+
+
+                        <h3>Impact on Business and Decision Making:</h3>
+                        <p>Hospitals can handle more patients efficiently and reduce costs. Doctors can focus more on treatment instead of spending too much time on analysis. Decision making becomes more data driven, which improves patient outcomes.</p>
+
+
+                        <h3>Future Potential:</h3>
+                        <p>AI could move from assisting doctors to predicting diseases before they even appear, which would completely change preventive healthcare.</p>
+
+
+                        <h3>Finance: Better Risk Management and Fraud Detection</h3>
+                        <p>In the finance industry, AI is helping companies detect fraud and manage risks. Companies like JPMorgan Chase are using AI systems to analyze transaction patterns and identify unusual activity.</p>
+                        <p>For example, if a transaction looks different from a user’s normal behavior, AI can flag it immediately. This helps prevent fraud before it happens. AI is also used in loan approvals by analyzing customer data quickly and more accurately than traditional methods.</p>
+
+
+                        <h3>Impact on Business and Decision Making:</h3>
+                        <p>Financial institutions can reduce losses from fraud and make faster decisions on loans and investments. AI improves accuracy and reduces manual work.</p>
+
+                        <h3>Future Potential:</h3>
+                        <p>AI may eventually provide fully automated financial advice, helping customers make better investment decisions in real time.</p>
+
+                        <h3>Retail: Personalized Customer Experience</h3>
+                        <p>In retail, AI is changing how companies interact with customers. Companies like Amazon use AI to recommend products based on user behavior and preferences.</p>
+                        <p>For example, when customers shop online, AI suggests products they are more likely to buy. This increases sales and improves customer satisfaction. AI is also used to manage inventory by predicting demand.</p>
+                    
+                        <h3>Impact on Business and Decision Making:</h3>
+                        <p>Retailers can better understand customer needs and adjust their strategies. Decisions about pricing, stock, and marketing are now based on data instead of guesswork.</p>    
+
+                        <h3>Future Potential:</h3>
+                        <p>Retail could become fully personalized, where every customer experiences a unique shopping journey based on their preferences.</p>
+
+                        <h3>Visual Summary of AI Impact Across Industries</h3>
                         <p>
-                            The dataset used in this project contained transaction records with features like transaction amount, time, and anonymized variables. One major issue was class imbalance because fraudulent transactions were extremely rare compared to normal ones. To handle this, the team used techniques such as oversampling the minority class and undersampling the majority class.
-                            They also removed missing or corrupted values and normalized numerical features so that models could learn more effectively. Outliers were handled carefully since in fraud detection, unusual values might actually represent important fraud cases rather than noise.
-                            From a course perspective, this aligns well with best practices. We learned that blindly removing outliers can reduce model performance if those outliers represent real-world anomalies. A good example in real life is banking systems like those used by Visa, where unusual transactions often signal fraud. This shows that context matters when cleaning data.
+                            Healthcare → Faster Diagnosis → Better Patient Outcomes
+                            Finance → Fraud Detection → Safer Transactions
+                            Retail → Personalization → Higher Customer Satisfaction
                         </p>
 
-                        <h3>Model Selection, Validation, and Evaluation</h3>
+
+                        <h3>Conclusion</h3>
                         <p>
-                            The project used multiple models including Logistic Regression, Decision Trees, and Random Forest. Among these, Random Forest performed the best due to its ability to handle complex patterns and reduce overfitting.
-                            The data was split into training, validation, and testing sets. Cross-validation was also used to ensure that the model generalized well to unseen data. This follows the exact process discussed in the course videos, especially about avoiding overfitting and ensuring reliable evaluation.
-                            Instead of relying only on accuracy, the team focused on precision, recall, and F1-score. This is important because in fraud detection, predicting all transactions as non-fraud could still give high accuracy but would be useless. Recall was especially important since missing a fraud case has serious consequences.
-                            This connects to real-world systems like PayPal, where models must balance catching fraud without blocking too many legitimate users. If the model is too strict, customers get frustrated. If it is too lenient, fraud increases.
+                            These examples show that AI is already transforming businesses in different industries. It is helping companies work faster, make better decisions, and improve customer experiences. However, the real value of AI is not just in automation, but in how it changes decision making. Businesses are moving from intuition based decisions to data driven strategies.
+                            Looking deeper, I think the biggest shift is not just technological, but strategic. AI is becoming part of the core business model, not just a support tool. Companies that understand how to combine human judgment with AI insights will have a strong advantage. At the same time, there are challenges like data privacy, ethical concerns, and over dependence on AI systems. So the future of AI in business will depend not only on innovation, but also on responsible use. In the end, success will come from balancing efficiency with trust, and technology with human values.
                         </p>
-
-                        <h3>Ethical Concerns: Bias, Fairness, and Privacy</h3>
-                        <p>
-                            One important ethical concern in this project was bias. Even though the dataset was anonymized, there is still a risk that certain groups could be unfairly flagged due to hidden patterns in the data. The team addressed this by regularly auditing model predictions and checking for unfair patterns.
-                            Privacy was handled by using anonymized data and secure storage systems. This is especially important in financial data where personal information must be protected.
-                            However, I think the project could have gone further by including explainability tools. For example, using feature importance or SHAP values would help understand why a transaction was flagged. This is important for fairness because users should have the ability to question decisions made by AI systems.
-                            In real life, companies like Google are increasingly focusing on explainable AI to make systems more transparent and trustworthy.
-                        </p>
-
-                        <h3>Post-Deployment Monitoring Plan</h3>
-                        <p>
-                            After deployment, the model was continuously monitored for performance changes. This included tracking metrics like recall and precision over time and retraining the model when performance dropped.
-                            This step is very important because data changes over time. Fraud patterns evolve as criminals adapt to detection systems. Without monitoring, even a good model can become outdated quickly.
-                            The project also included alert systems to detect unusual drops in performance. This reflects what we learned in class about model drift and the need for continuous evaluation.
-                            A real-world example is how Amazon updates its recommendation and fraud systems regularly to adapt to user behavior and new threats.
-                        </p>
-
-                        <h3>Critical Reflection and Insights</h3>
-                        <p>
-                            Overall, this project strongly aligns with the best practices taught in the course, especially in terms of data preprocessing, evaluation metrics, and validation techniques. However, I noticed that ethical considerations were treated more as an additional step rather than being integrated throughout the entire pipeline. In my opinion, ethical checks should be continuous, just like model evaluation.
-                            One key insight I would apply in future work is focusing more on recall and real-world impact rather than just accuracy. Another important takeaway is the importance of understanding the business context before choosing a model or metric.
-                            One thing I would avoid is relying too much on a single model without testing alternatives. Even though Random Forest performed well, combining models or using ensemble methods could further improve performance.
-                        </p>
-
-                        <h3>Final Reflection</h3>
-                        <p>What stood out to me the most is that machine learning is not just about building accurate models, but about building responsible systems that work in real-world conditions. A technically strong model can still fail if it ignores ethical issues or lacks proper monitoring. In the future, I think ML systems should move toward more human-centered design, where transparency, fairness, and adaptability are treated as core requirements rather than optional features. As AI becomes more integrated into daily life, the role of ML engineers will not just be technical experts, but also decision-makers who understand the social impact of their systems.</p>
-
-                        <h3></h3>
-                        <p></p>
                     </div>
                 </div>
 
@@ -186,9 +194,13 @@
                     <h2>Tool Disclosure</h2>
                     <div class="outcomes-card">
                         <h3>AI Tool Usage</h3>
-                        <p>This assignment was completed with the assistance of ChatGPT. The AI tool was used to help organize ideas, improve clarity, and structure the content according to APA guidelines. All final content was reviewed, edited, and refined by the student to ensure accuracy, originality, and alignment with course requirements.</p>
+                        <p>This newsletter was created with the assistance of ChatGPT to help organize ideas and structure the content. The analysis and final writing reflect my own understanding of the topic.</p>
                         <h3>Learning Outcome</h3>
-                        <p>Understand how to build, evaluate, and monitor machine learning models while considering real-world impact, including accuracy, fairness, and ethical responsibility.</p>
+                        <p>
+                            This assignment helped me understand how AI is used in real-world businesses across different industries. I learned how companies use AI to improve efficiency, support decision-making, and enhance customer experience.
+
+                            It also gave me insight into the benefits and challenges of AI, like data privacy and ethics, and improved my ability to explain AI applications in a simple way.
+                        </p>
                     </div>
                 </div>
 
@@ -198,15 +210,17 @@
                     <div class="outcomes-card">
                         <h3>What I Learned</h3>
                         <ul>
-                            <li>Accuracy alone is not enough—recall and real-world impact matter more</li>
-                            <li>Data quality and handling imbalance are critical </li>
-                            <li>Models must be validated properly to avoid errors</li>
-                            <li>Ethical issues like bias and privacy cannot be ignored</li>
-                            <li>Continuous monitoring is needed as data changes</li>
+                            <li>AI is already widely used in industries like healthcare, finance, and retail.</li>
+                            <li>It helps businesses make faster and more data-driven decisions.</li>
+                            <li>AI improves efficiency by reducing manual work and errors.</li>
+                            <li>Personalization is a major benefit, especially in customer-focused industries.</li>
+                            <li>There are also challenges like data privacy, ethics, and over-dependence on AI.</li>
+                            <li>The future of AI in business depends on using it responsibly along with human judgment.</li>
                         </ul>
 
                         <h3>How This Contributes to My Growth</h3>
-                        <p>This helped me understand that machine learning is not just about building models, but about making responsible decisions. I learned to focus on real-world impact, not just accuracy, and to think about fairness, ethics, and continuous improvement. It also improved my ability to analyze projects and apply concepts in a practical way.</p>
+                        <p>This assignment helped me think more practically about how AI is used in real life, not just in theory. I now understand better how businesses apply AI to solve problems and improve decisions.</p>
+                        <p>It also improved my ability to analyze real-world examples and explain them in a simple way. Overall, it helped me develop a more balanced view of AI, including both its benefits and challenges, which is important for my future career.</p>
                     </div>
                 </div>
 
@@ -215,9 +229,11 @@
                     <h2>Course Context</h2>
                     <div class="context-card">
                         <h3>Where This Fits in the Course</h3>
-                        <p>This topic fits into the later part of the course where we move from basic machine learning concepts to real-world applications. It connects ideas like data preprocessing, model evaluation, and ethics, showing how everything comes together in a complete machine learning pipeline.</p>
+                        <p>This assignment connects machine learning concepts to real-world business use. It shows how AI is applied in industries, not just how it works.</p>
+                        <p>It helps bridge theory and practice and prepares me for more advanced topics in the course.</p>
                         <h3>Prerequisites & Background</h3>
-                        <p>Basic understanding of machine learning concepts such as supervised learning, data preprocessing, and simple models (like Logistic Regression and Decision Trees). Familiarity with evaluation metrics like accuracy, precision, and recall, along with a general idea of data ethics and bias, is also helpful..</p>
+                        <p>To complete this assignment, a basic understanding of machine learning and AI concepts is helpful. Knowledge of how businesses operate and make decisions also supports better analysis.</p>
+                        <p>Familiarity with real-world examples of AI applications and general research skills are important to identify recent developments and explain them clearly.</p>
                     </div>
                 </div>
             </div>
