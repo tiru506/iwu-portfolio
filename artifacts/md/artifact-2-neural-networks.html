@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A visual portfolio artifact explaining neural network components.">
+<title>Understanding Neural Networks | Portfolio Artifact 2</title>
+<style>
+:root{--navy:#14213d;--blue:#2457c5;--teal:#087f8c;--gold:#d28a19;--ink:#172033;--muted:#5d687b;--paper:#f5f7fb;--line:#dfe5ef}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 "Segoe UI",Arial,sans-serif}
+a{color:var(--blue)}.topbar{background:var(--navy);color:white;text-align:right;padding:14px 5vw;font-weight:700}
+.hero{background:linear-gradient(125deg,#14213d,#1d3d78 65%,#087f8c);color:white;padding:72px 5vw}
+.wrap{max-width:1120px;margin:auto}.eyebrow{color:#b9d8ff;text-transform:uppercase;letter-spacing:2px;font-size:.8rem;font-weight:700}
+h1{font-size:clamp(2.5rem,6vw,4.4rem);line-height:1.08;margin:12px 0 18px}.hero p{max-width:760px;color:#e5edff;font-size:1.12rem}
+.btn{display:inline-block;padding:10px 18px;border:1px solid #fff;border-radius:30px;color:white;text-decoration:none;font-weight:700;margin:10px 8px 0 0}.btn.primary{background:white;color:#17366e}
+nav{position:sticky;top:0;background:#fffffff2;border-bottom:1px solid var(--line);z-index:4}nav .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;padding:12px 5vw}nav a{text-decoration:none;color:#34415a;font-size:.9rem;font-weight:650}
+main{max-width:1120px;margin:auto;padding:28px 5vw 60px}section{margin:30px 0 44px;scroll-margin-top:80px}
+h2{font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.2;margin:0 0 8px}h3{margin:0 0 8px}.lead{color:var(--muted);max-width:850px;margin:0 0 18px}
+.card{background:white;border:1px solid var(--line);border-radius:17px;padding:22px;box-shadow:0 10px 28px #1720330d}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.component{border-top:4px solid var(--blue)}.component:nth-child(2n){border-top-color:var(--teal)}.component:nth-child(3n){border-top-color:var(--gold)}.component p{color:var(--muted);margin:0}
+.tag{display:inline-block;background:#eaf0ff;color:#234da4;border-radius:20px;padding:3px 9px;font-size:.75rem;font-weight:700;margin-bottom:9px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.diagram{width:100%;min-width:620px;height:auto;display:block}.scroll{overflow-x:auto}.legend{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.9rem;margin-top:10px}.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:6px}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{background:#f7f9fd;border:1px solid var(--line);border-radius:12px;padding:14px}.step strong{display:block;color:var(--blue)}.step p{font-size:.92rem;color:var(--muted);margin:5px 0 0}
+.callout{background:#edf8f8;border-left:4px solid var(--teal);padding:16px 18px;border-radius:9px}.callout p{margin:0}.reflection p{margin-top:0}
+li{margin:7px 0}.resources li{overflow-wrap:anywhere}
+footer{background:var(--navy);color:#dbe5f7;text-align:center;padding:25px 5vw;font-size:.9rem}footer p{margin:4px}.back{color:#b9d8ff}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}}
+@media(max-width:540px){.grid,.flow{grid-template-columns:1fr}.hero{padding:52px 5vw}.card{padding:18px}}
+</style></head>
+<body>
+<div class="topbar">Tirumala Raju Killamsetti</div>
+<header class="hero" id="top"><div class="wrap">
+<div class="eyebrow">Professional Portfolio · Artifact 2</div>
+<h1>Understanding<br>Neural Networks</h1>
+<p>A visual introduction to how artificial neural networks receive information, learn patterns, and produce predictions. This artifact explains the main components in clear, everyday language.</p>
+<a class="btn primary" href="#architecture">Explore the network</a><a class="btn" href="https://playground.tensorflow.org/" target="_blank" rel="noopener">Open Neural Network Playground ↗</a>
+</div></header>
+<nav><div class="wrap"><a href="#introduction">Introduction</a><a href="#architecture">Architecture</a><a href="#components">Components</a><a href="#learning">How it learns</a><a href="#playground">Playground activity</a><a href="#reflection">Reflection</a><a href="#references">References</a></div></nav>
+<main>
+<section id="introduction"><h2>1. Introduction</h2><p class="lead">A neural network is a machine learning model inspired in a general way by the connected structure of the human brain. It is made of connected processing units called neurons. A network learns patterns from examples and uses what it has learned to make predictions.</p>
+<div class="two"><div class="card"><h3>Why neural networks matter</h3><p>Neural networks are used in image recognition, speech processing, language tools, fraud detection, forecasting, and many other applications. They are useful when a problem contains patterns that may be difficult to describe with simple rules.</p></div>
+<div class="card"><h3>A simple example</h3><p>Imagine training a model to identify whether an image contains a cat. The network receives image information, processes it through layers, and produces a prediction. During training, it compares its prediction with the correct answer and adjusts its internal values to improve.</p></div></div></section>
+<section id="architecture"><h2>2. Neural Network Architecture</h2><p class="lead">Information moves from left to right. Each circle represents a neuron, and each connecting line represents a weighted connection between neurons.</p>
+<div class="card"><div class="scroll"><svg class="diagram" viewBox="0 0 900 390" role="img" aria-label="Feedforward neural network with an input layer, two hidden layers, and an output layer">
+<g stroke="#aab5c7" stroke-width="2" opacity=".9"><path d="M110 145L330 85M110 145L330 190M110 145L330 295M110 270L330 85M110 270L330 190M110 270L330 295"/>
+<path d="M330 85L560 85M330 85L560 190M330 85L560 295M330 190L560 85M330 190L560 190M330 190L560 295M330 295L560 85M330 295L560 190M330 295L560 295"/>
+<path d="M560 85L790 145M560 85L790 270M560 190L790 145M560 190L790 270M560 295L790 145M560 295L790 270"/></g>
+<g fill="#e8efff" stroke="#2457c5" stroke-width="3"><circle cx="110" cy="145" r="25"/><circle cx="110" cy="270" r="25"/></g>
+<g fill="#e5f7f6" stroke="#087f8c" stroke-width="3"><circle cx="330" cy="85" r="25"/><circle cx="330" cy="190" r="25"/><circle cx="330" cy="295" r="25"/><circle cx="560" cy="85" r="25"/><circle cx="560" cy="190" r="25"/><circle cx="560" cy="295" r="25"/></g>
+<g fill="#fff2d9" stroke="#d28a19" stroke-width="3"><circle cx="790" cy="145" r="25"/><circle cx="790" cy="270" r="25"/></g>
+<g font-family="Arial" font-size="14" fill="#172033" text-anchor="middle" font-weight="bold"><text x="110" y="150">x1</text><text x="110" y="275">x2</text><text x="330" y="90">h1</text><text x="330" y="195">h2</text><text x="330" y="300">h3</text><text x="560" y="90">h4</text><text x="560" y="195">h5</text><text x="560" y="300">h6</text><text x="790" y="150">y1</text><text x="790" y="275">y2</text></g>
+<g font-family="Arial" font-size="17" fill="#172033" text-anchor="middle" font-weight="bold"><text x="110" y="345">Input layer</text><text x="330" y="345">Hidden layer 1</text><text x="560" y="345">Hidden layer 2</text><text x="790" y="345">Output layer</text></g>
+<text x="450" y="28" font-family="Arial" font-size="12" fill="#5d687b" text-anchor="middle">Weighted connections carry information between neurons</text></svg></div>
+<div class="legend"><span><i class="dot" style="background:#2457c5"></i>Input neurons</span><span><i class="dot" style="background:#087f8c"></i>Hidden neurons</span><span><i class="dot" style="background:#d28a19"></i>Output neurons</span></div>
+<p style="color:#5d687b;font-size:.9rem">This is a simplified example. The number of neurons and layers depends on the problem being solved.</p></div></section>
+<section id="components"><h2>3. Main Neural Network Components</h2><p class="lead">Each component has a different job. Together, they allow the network to process examples and improve its predictions.</p>
+<div class="grid">
+<article class="card component"><span class="tag">Structure</span><h3>Layers</h3><p>Layers organize neurons into stages. The input layer receives data, hidden layers learn patterns, and the output layer gives the final prediction.</p></article>
+<article class="card component"><span class="tag">Processing units</span><h3>Neurons</h3><p>A neuron receives values, calculates a weighted total, adds a bias, and passes the result through an activation function to produce an output.</p></article>
+<article class="card component"><span class="tag">Learned values</span><h3>Weights</h3><p>Weights control how strongly one neuron affects another. During training, the network changes these values to improve its predictions.</p></article>
+<article class="card component"><span class="tag">Decision step</span><h3>Activation Functions</h3><p>An activation function transforms a neuron's calculated value. Functions such as ReLU help a network learn complex, non-linear patterns.</p></article>
+<article class="card component"><span class="tag">Error measurement</span><h3>Loss Functions</h3><p>A loss function measures how far a prediction is from the correct answer. A lower loss generally means predictions are closer to the target.</p></article>
+<article class="card component"><span class="tag">Learning method</span><h3>Optimization Algorithms</h3><p>An optimizer updates the network's weights and biases to reduce loss. Gradient descent and Adam are commonly used methods.</p></article>
+</div></section>
+<section id="learning"><h2>4. How a Neural Network Learns</h2><p class="lead">Training is a repeated process. The network makes a prediction, measures its error, and updates its values so that the next prediction can improve.</p>
+<div class="card"><div class="flow">
+<div class="step"><strong>1. Forward pass</strong><p>Input data moves through the layers and the network produces a prediction.</p></div>
+<div class="step"><strong>2. Calculate loss</strong><p>The loss function compares the prediction with the correct target.</p></div>
+<div class="step"><strong>3. Backpropagation</strong><p>The model calculates how its weights contributed to the error.</p></div>
+<div class="step"><strong>4. Update weights</strong><p>The optimizer adjusts weights and biases to try to reduce the loss.</p></div>
+</div><div class="callout" style="margin-top:18px"><p><strong>Key idea:</strong> The network repeats this process across many training examples. The goal is to make useful predictions on new data, not just memorize the training data.</p></div></div></section>
+<section id="playground"><h2>5. Neural Network Playground Activity</h2><p class="lead">The TensorFlow Neural Network Playground lets users change a model's settings and see how those choices affect learning.</p>
+<div class="two"><div class="card"><h3>What to explore</h3><ul><li>Choose datasets such as circles, XOR, or a spiral.</li><li>Change the amount of noise.</li><li>Add or remove input features.</li><li>Change the number of hidden layers and neurons.</li><li>Try different activation functions and learning rates.</li><li>Train the model and observe the decision boundary and loss.</li></ul><a class="btn" style="background:#2457c5;color:white;border-color:#2457c5" href="https://playground.tensorflow.org/" target="_blank" rel="noopener">Launch TensorFlow Playground ↗</a></div>
+<div class="card"><h3>What the settings can show</h3><ul><li><strong>More hidden neurons:</strong> can give the model more capacity, but may make it more complex.</li><li><strong>More hidden layers:</strong> can help learn complicated relationships, but are not always needed.</li><li><strong>More noise:</strong> makes patterns harder to learn and can affect prediction quality.</li><li><strong>Learning rate:</strong> controls the size of weight updates. A rate that is too high or too low can make training difficult.</li></ul><p style="color:#5d687b;font-size:.9rem">These are general learning principles. Exact outcomes depend on the dataset and settings used in your experiment.</p></div></div></section>
+<section id="reflection"><h2>6. Summary and Reflection</h2><p class="lead">Visualizing a neural network makes its structure and learning process easier to understand.</p>
+<div class="card reflection"><p>Creating this artifact helped me understand how the different parts of a neural network work together. I learned that layers organize the network, neurons perform calculations, and weights control the influence of information as it moves through the model. Activation functions help the network learn more than simple straight-line relationships. The loss function measures prediction error, while an optimization algorithm updates the model to reduce that error.</p>
+<p>Exploring the TensorFlow Neural Network Playground is useful because I can change the number of layers, neurons, and other settings and then observe the effect on training. It helped me see that adding more layers or neurons does not automatically make a model better. The right design depends on the data and the problem. Overall, this activity made neural networks less abstract and helped me explain their main components in a simple visual way.</p></div></section>
+<section id="references"><h2>7. References and Further Learning</h2><p class="lead">These resources provide additional explanations and interactive examples.</p>
+<div class="card resources"><ul>
+<li>TensorFlow. (n.d.). <em>Neural Network Playground.</em> <a href="https://playground.tensorflow.org/" target="_blank" rel="noopener">https://playground.tensorflow.org/</a></li>
+<li>Google for Developers. (n.d.). <em>Neural networks: Machine Learning Crash Course.</em> <a href="https://developers.google.com/machine-learning/crash-course/neural-networks" target="_blank" rel="noopener">https://developers.google.com/machine-learning/crash-course/neural-networks</a></li>
+<li>3Blue1Brown. (2017). <em>But what is a neural network?</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank" rel="noopener">https://www.youtube.com/watch?v=aircAruvnKk</a></li>
+<li>3Blue1Brown. (n.d.). <em>Neural networks explained in 5 minutes.</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=jmmW0F0biz0" target="_blank" rel="noopener">https://www.youtube.com/watch?v=jmmW0F0biz0</a></li>
+</ul></div></section>
+<div class="callout"><p><strong>Portfolio note:</strong> This page is designed as the second artifact in a professional portfolio. Add it to your portfolio website and make sure the published page is accessible to your instructor.</p><p style="margin-top:10px"><a href="https://tiru506.github.io/iwu-portfolio/artifacts/md/artifact-1.html" target="_blank" rel="noopener">View Artifact 1: Responsible AI Reflection ↗</a></p></div>
+</main>
+<footer><p>© 2026 Tirumala Raju Killamsetti. All rights reserved.</p><p>Professional Portfolio · Artifact 2: Understanding Neural Networks</p><a class="back" href="#top">Back to top ↑</a></footer>
+</body></html>
