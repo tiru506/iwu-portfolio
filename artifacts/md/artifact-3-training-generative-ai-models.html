@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Visual guide to LLM training steps and resource costs.">
+<title>How Large Language Models Are Trained | Portfolio Artifact 3</title>
+<style>
+:root{--navy:#101d35;--blue:#3568d4;--cyan:#1aa6b7;--ink:#1c2a3d;--muted:#5e6d80;--paper:#f4f7fb;--line:#dfe6ef}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Inter,Segoe UI,Arial,sans-serif}
+.top{background:#0c172b;color:#dce7f7;padding:12px 5vw;display:flex;justify-content:space-between;flex-wrap:wrap;font-size:.9rem}
+.hero{background:radial-gradient(circle at 85% 20%,#1aa6b744,transparent 30%),linear-gradient(125deg,#101d35,#1b3760);color:white;padding:60px 5vw}
+.inner,main,nav{max-width:1120px;margin:auto}.inner{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+.eyebrow{color:#7ee0e3;text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;font-weight:bold}
+h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.08;margin:12px 0}h2{font-size:clamp(1.6rem,3vw,2.2rem);color:var(--navy);line-height:1.2;margin:5px 0 12px}h3{color:var(--navy);margin:0 0 7px}
+.hero p{color:#d5e0ef;font-size:1.08rem}.visual{background:#ffffff12;border:1px solid #ffffff33;border-radius:22px;padding:18px}.visual svg{width:100%;height:auto}
+.pills{display:flex;gap:8px;flex-wrap:wrap}.pill{border:1px solid #ffffff55;border-radius:30px;padding:5px 11px;font-size:.8rem}
+.nav{position:sticky;top:0;background:white;border-bottom:1px solid var(--line);z-index:5}nav{display:flex;gap:22px;overflow:auto;padding:0 5vw;white-space:nowrap}nav a{padding:14px 0;display:block;color:#46566d;font-weight:700;font-size:.9rem;text-decoration:none}
+main{padding:38px 5vw 65px}section{scroll-margin-top:70px;margin-bottom:50px}.kicker{color:var(--blue);font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.lead{color:#4e5e73;max-width:850px}
+.grid{display:grid;gap:16px}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:white;border:1px solid var(--line);border-radius:17px;padding:21px;box-shadow:0 10px 28px #1426420d}.card p{color:var(--muted);margin:6px 0 0}.icon{font-size:1.5rem;margin-bottom:8px}.callout{background:#eaf2ff;border-left:4px solid var(--blue);padding:15px 18px;border-radius:9px;margin:18px 0;color:#344b6d}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;counter-reset:n}.step{background:white;border:1px solid var(--line);border-radius:15px;padding:19px}.step:before{counter-increment:n;content:counter(n);display:grid;place-items:center;width:31px;height:31px;border-radius:50%;background:var(--navy);color:white;font-weight:bold;margin-bottom:12px}.step p{color:var(--muted);font-size:.94rem;margin:4px 0}
+.tablebox{overflow-x:auto;background:white;border:1px solid var(--line);border-radius:15px}table{border-collapse:collapse;width:100%;min-width:760px}th,td{text-align:left;padding:14px;border-bottom:1px solid var(--line);vertical-align:top}th{background:#edf2f8;color:#233650;font-size:.82rem;text-transform:uppercase}td{color:#526176;font-size:.92rem}.model{font-weight:800;color:var(--navy)}
+.tag{font-size:.75rem;font-weight:bold;border-radius:30px;padding:4px 8px;background:#fff1df;color:#8a5319}.tag.ok{background:#e4f5ed;color:#17694e}
+.metric{font-size:1.55rem;font-weight:850;color:var(--navy)}.barbox{background:white;border:1px solid var(--line);border-radius:16px;padding:22px}.bar{display:grid;grid-template-columns:110px 1fr 110px;gap:10px;align-items:center;margin:15px 0}.track{height:12px;background:#edf1f6;border-radius:20px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:20px}.formula{background:#10213b;color:white;border-radius:12px;padding:15px;font-family:monospace;overflow-wrap:anywhere}.formula b{color:#8ce2e3}
+.refs{padding-left:20px}.refs li{margin:10px 0;color:#536176;overflow-wrap:anywhere}.refs a{color:var(--blue)}.note{font-size:.85rem;color:#6a788b}
+footer{background:#0c172b;color:#cbd7e7;text-align:center;padding:25px;font-size:.88rem}
+.portfolio-link{display:block;color:inherit;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.portfolio-link:hover{transform:translateY(-3px);border-color:#9bb5ed;box-shadow:0 14px 32px #14264218;text-decoration:none}
+.portfolio-link h3{color:var(--blue);font-size:1rem}
+.portfolio-link.current{border:2px solid var(--blue);background:#f8faff}
+.portfolio-link.current h3{color:var(--navy)}
+@media(max-width:800px){.inner{grid-template-columns:1fr}.g4{grid-template-columns:repeat(2,1fr)}.g3,.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.g2,.g3,.g4,.steps{grid-template-columns:1fr}.bar{grid-template-columns:1fr;gap:5px}}
+@media print{.nav{position:static}.hero{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+</style></head>
+<body>
+<div class="top"><strong>Tirumala Raju Killamsetti · Professional Portfolio</strong><span>AI &amp; Machine Learning · Artifact 3</span></div>
+<header class="hero" id="top"><div class="inner">
+<div><div class="eyebrow">Understanding the infrastructure behind generative AI</div>
+<h1>How Large Language Models Are Trained</h1>
+<p>From collecting data to deploying a model, training a large language model takes more than writing code. It needs high-quality data, powerful computers, electricity, skilled people, time, and careful testing.</p>
+<div class="pills"><span class="pill">Training process</span><span class="pill">Compute &amp; GPUs</span><span class="pill">Energy &amp; emissions</span><span class="pill">Real-world examples</span></div></div>
+<div class="visual"><svg viewBox="0 0 500 230" role="img" aria-label="Data flows through GPU servers to a trained language model">
+<g fill="none" stroke="#9bb6d5" stroke-width="2"><path d="M112 110H194M306 110H390" stroke-dasharray="6 6"/></g>
+<g transform="translate(15 48)"><rect width="100" height="125" rx="12" fill="#203b61" stroke="#8ba9cf"/><path d="M20 25h60M20 45h60M20 65h42M20 88h60" stroke="#8ee1df" stroke-width="5" stroke-linecap="round"/><text x="50" y="113" text-anchor="middle" fill="white" font-size="12">DATA</text></g>
+<g transform="translate(198 35)"><rect width="108" height="145" rx="12" fill="#203b61" stroke="#8ba9cf"/><g fill="#315780"><rect x="13" y="15" width="82" height="32" rx="5"/><rect x="13" y="56" width="82" height="32" rx="5"/><rect x="13" y="97" width="82" height="32" rx="5"/></g><g fill="#65e0d6"><circle cx="26" cy="31" r="4"/><circle cx="26" cy="72" r="4"/><circle cx="26" cy="113" r="4"/></g><text x="54" y="165" text-anchor="middle" fill="white" font-size="12">GPU CLUSTER</text></g>
+<g transform="translate(395 51)"><circle cx="43" cy="61" r="48" fill="#203b61" stroke="#65d9d5" stroke-width="3"/><g fill="none" stroke="#7de0dc" stroke-width="2"><path d="M16 45Q43 10 70 45Q43 80 16 45ZM43 14Q14 61 43 108Q72 61 43 14ZM5 61h76"/></g><text x="43" y="124" text-anchor="middle" fill="white" font-size="12">LLM</text></g>
+<text x="250" y="218" fill="#d3e2f3" text-anchor="middle" font-size="12">DATA → COMPUTE → TRAINED MODEL</text></svg></div>
+</div></header>
+<div class="nav"><nav><a href="#intro">Introduction</a><a href="#process">Training steps</a><a href="#resources">Resources &amp; costs</a><a href="#models">Model examples</a><a href="#takeaways">Key takeaways</a><a href="#refs">References</a></nav></div>
+<main>
+<section id="intro"><div class="kicker">01 · Introduction</div><h2>What does it take to train an LLM?</h2>
+<p class="lead">A large language model (LLM) learns statistical patterns from large collections of information so it can generate useful responses. Training is repeated, technically demanding, and resource intensive.</p>
+<div class="grid g3" style="margin-top:20px">
+<div class="card"><div class="icon">📚</div><h3>Data</h3><p>Text, code, images, and other data are collected, filtered, organized, and prepared.</p></div>
+<div class="card"><div class="icon">🖥️</div><h3>Compute</h3><p>Groups of specialized processors perform enormous numbers of mathematical operations.</p></div>
+<div class="card"><div class="icon">⚡</div><h3>Energy and time</h3><p>Servers use electricity and cooling. Large training runs can take days or weeks of coordinated work.</p></div></div>
+<div class="callout"><b>Important:</b> Exact training costs for many leading commercial models are not public. This graphic separates published figures from information that developers have not disclosed.</div></section>
+
+<section id="process"><div class="kicker">02 · Training process</div><h2>From raw information to a deployed model</h2><p class="lead">Training is a sequence of stages. Each stage needs data, people, software, and computing resources.</p>
+<div class="steps" style="margin-top:20px">
+<div class="step"><h3>Collect data</h3><p>Gather suitable text, code, images, or other information from permitted public, licensed, and curated sources.</p></div>
+<div class="step"><h3>Clean and prepare</h3><p>Remove duplicates and low-quality material, apply filters, check quality, and convert information into tokens.</p></div>
+<div class="step"><h3>Pre-train the model</h3><p>Train the neural network on large datasets. A common objective is predicting the next token in a sequence.</p></div>
+<div class="step"><h3>Fine-tune and align</h3><p>Use instruction examples and human or AI feedback to improve helpfulness and instruction following.</p></div>
+<div class="step"><h3>Evaluate and improve</h3><p>Test accuracy, reasoning, safety, bias, and reliability. Address problems and repeat selected steps.</p></div>
+<div class="step"><h3>Deploy and monitor</h3><p>Serve the model to users, monitor performance and safety, maintain infrastructure, and release updates.</p></div>
+</div><div class="callout"><b>Training vs. use:</b> Pre-training and fine-tuning create or adapt a model. Deployment is where the model answers requests. Serving millions of requests also consumes compute and energy.</div></section>
+
+<section id="resources"><div class="kicker">03 · Resources and costs</div><h2>What resources are needed?</h2><p class="lead">The investment includes more than electricity. Hardware, data rights, engineering, experiments, networking, storage, and cooling all contribute.</p>
+<div class="grid g4" style="margin-top:20px">
+<div class="card"><div class="icon">🗂️</div><h3>Data</h3><p>Collection, licensing, filtering, annotation, storage, and quality review.</p></div>
+<div class="card"><div class="icon">🧠</div><h3>Compute</h3><p>GPUs or other accelerators, servers, fast networking, and cloud or data-center capacity.</p></div>
+<div class="card"><div class="icon">⚡</div><h3>Energy</h3><p>Electricity for processors, memory, networking, cooling, and supporting systems.</p></div>
+<div class="card"><div class="icon">⏱️</div><h3>Time and people</h3><p>Training runs, experiments, engineering, research, safety testing, and maintenance.</p></div></div>
+<div class="grid g2" style="margin-top:17px"><div class="card"><h3>How the costs add up</h3><p>Budgets can include accelerator rental or depreciation, data acquisition, staff, storage, networking, cooling, electricity, failed runs, and evaluation. Public reports rarely provide every cost category.</p></div>
+<div class="card"><h3>Simple energy calculation</h3><p>Energy depends on average power draw and operating time.</p><div class="formula" style="margin-top:10px"><b>Energy (kWh)</b> = Average power (kW) × Time (hours)<br><b>Electricity cost</b> = Energy (kWh) × Price per kWh</div></div></div>
+<div class="barbox" style="margin-top:18px"><h3>Reported Llama 3.1 GPU-hours</h3><p class="note">Cumulative GPU-hours reported by Meta for three Llama 3.1 model sizes. Bars represent aggregate GPU time, not elapsed calendar time.</p>
+<div class="bar"><b>8B model</b><div class="track"><div class="fill" style="width:4.7%"></div></div><b>1.46M hours</b></div>
+<div class="bar"><b>70B model</b><div class="track"><div class="fill" style="width:22.7%"></div></div><b>7.0M hours</b></div>
+<div class="bar"><b>405B model</b><div class="track"><div class="fill" style="width:100%"></div></div><b>30.84M hours</b></div>
+<p class="note">GPU-hours add up the time used by all GPUs. For example, 1,000 GPUs running for one hour equals 1,000 GPU-hours. This is not 1,000 hours of wall-clock time.</p></div></section>
+
+<section id="models"><div class="kicker">04 · Industry examples</div><h2>What has been publicly reported?</h2><p class="lead">Some developers publish detailed resource figures, while others share only broad information about their training approach.</p>
+<div class="tablebox" style="margin-top:18px"><table><thead><tr><th>Model / developer</th><th>Training information</th><th>Resource information</th><th>Disclosure</th></tr></thead><tbody>
+<tr><td><span class="model">GPT-4</span><br>OpenAI</td><td>OpenAI says GPT-4 was pre-trained on publicly available and licensed third-party data, then fine-tuned using reinforcement learning from human feedback (RLHF).</td><td>Exact dataset construction, hardware, compute, and training cost were not disclosed in the technical report.</td><td><span class="tag">Not disclosed</span></td></tr>
+<tr><td><span class="model">Llama 3.1</span><br>Meta</td><td>About 15 trillion pre-training tokens from publicly available sources. Fine-tuning included public instruction datasets and over 25 million synthetic examples.</td><td>39.3 million cumulative H100 GPU-hours across 8B, 70B, and 405B models. Meta reports 11,390 metric tons of location-based CO₂-equivalent emissions.</td><td><span class="tag ok">Model card</span></td></tr>
+<tr><td><span class="model">Claude</span><br>Anthropic</td><td>Anthropic describes model training and alignment, but does not publish a complete, comparable dataset inventory for every model.</td><td>Comparable exact GPU-hours, energy use, and full training costs are not publicly disclosed in a consistent model-level breakdown.</td><td><span class="tag">Limited detail</span></td></tr>
+<tr><td><span class="model">GPT-3</span><br>OpenAI · earlier model</td><td>Used in research as an example when estimating the energy footprint of large-model training.</td><td>One published research estimate puts training energy at about 1,287 MWh. This is an estimate for GPT-3, not a disclosed GPT-4 figure.</td><td><span class="tag">Research estimate</span></td></tr>
+</tbody></table></div>
+<div class="callout"><b>How to read these numbers:</b> Llama 3.1 figures are company-reported metrics. The GPT-3 energy figure is a research estimate. GPT-4 and Claude figures are not available as comparable public cost disclosures. Measurement boundaries and hardware differ, so direct comparisons are difficult.</div>
+<div class="grid g2"><div class="card"><h3>Example: Llama 3.1 405B</h3><div class="metric">30.84 million</div><b>H100 GPU-hours reported</b><p>The largest Llama 3.1 model accounted for most of the reported GPU time across the three model sizes.</p></div>
+<div class="card"><h3>Example: GPT-4</h3><div class="metric">Not public</div><b>Exact training compute and cost</b><p>OpenAI's technical report does not provide the model's hardware, compute, dataset construction, or training-cost details. Missing figures should not be replaced with guesses.</p></div></div></section>
+
+<section id="takeaways"><div class="kicker">05 · Key takeaways</div><h2>What should we remember?</h2>
+<div class="grid g2"><div class="card"><h3>1. Data quality matters</h3><p>Large datasets need filtering, documentation, and responsible handling. More data does not automatically mean better data.</p></div>
+<div class="card"><h3>2. Compute is a major investment</h3><p>Large runs require many accelerators working together, supported by fast networks, storage, and reliable infrastructure.</p></div>
+<div class="card"><h3>3. Energy has an environmental impact</h3><p>Electricity demand and emissions depend on hardware efficiency, data-center design, cooling, and energy sources.</p></div>
+<div class="card"><h3>4. Training is one part of the lifecycle</h3><p>Fine-tuning, evaluation, deployment, and repeated user requests all require resources.</p></div></div>
+<div class="callout"><b>My main takeaway:</b> Training generative AI is a large engineering effort, not just a software task. Performance depends on data, computing resources, and careful testing. Costs also include energy, time, people, and the infrastructure needed after training.</div></section>
+
+<section id="refs"><div class="kicker">06 · References</div><h2>Sources and further reading</h2>
+<ol class="refs">
+<li>Meta AI. (2024). <i>Llama 3.1 model card.</i> GitHub. <a href="https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md" target="_blank" rel="noopener">Model card</a>.</li>
+<li>OpenAI. (2023). <i>GPT-4 technical report.</i> <a href="https://cdn.openai.com/papers/gpt-4.pdf" target="_blank" rel="noopener">Technical report (PDF)</a>.</li>
+<li>OpenAI. (n.d.). <i>How ChatGPT and our foundation models are developed.</i> <a href="https://help.openai.com/en/articles/7842364-how-chatgpt-and-our-foundation-models-are-developed" target="_blank" rel="noopener">OpenAI Help Center</a>.</li>
+<li>de Vries, A. (2023). The growing energy footprint of artificial intelligence. <i>Joule, 7</i>(10), 2191–2194. <a href="https://doi.org/10.1016/j.joule.2023.09.004" target="_blank" rel="noopener">https://doi.org/10.1016/j.joule.2023.09.004</a>.</li>
+<li>Li, P., Yang, J., Islam, M. A., &amp; Ren, S. (2025). Making AI less “thirsty”: Uncovering and addressing the secret water footprint of AI models. <i>Communications of the ACM.</i> <a href="https://doi.org/10.1145/3724499" target="_blank" rel="noopener">https://doi.org/10.1145/3724499</a>.</li>
+<li>Wolfram, S. (2023). <i>What is ChatGPT doing … and why does it work?</i> <a href="https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/" target="_blank" rel="noopener">Wolfram Writings</a>.</li>
+</ol>
+<p class="note">Figures reflect the cited publications and model-card disclosures. They may not represent later model versions or the full lifecycle cost. Llama GPU-hours are aggregate compute time, not elapsed training duration. Publicly unavailable costs are marked as undisclosed.</p></section>
+<section id="portfolio-artifacts" aria-labelledby="portfolio-heading">
+<div class="kicker">07 · Portfolio navigation</div>
+<h2 id="portfolio-heading">Explore My Portfolio Artifacts</h2>
+<p class="lead">These artifacts demonstrate different areas of my learning and work in artificial intelligence and machine learning.</p>
+<div class="grid g3" style="margin-top:18px">
+  <a class="card portfolio-link" href="https://tiru506.github.io/iwu-portfolio/artifacts/md/artifact-1.html" target="_blank" rel="noopener">
+    <div class="icon">🧭</div><h3>View Artifact 1: Responsible AI Reflection ↗</h3>
+    <p>Reflection on responsible AI practices, ethical considerations, and the impact of AI.</p>
+  </a>
+  <a class="card portfolio-link" href="https://tiru506.github.io/iwu-portfolio/artifacts/md/artifact-2-neural-networks.html" target="_blank" rel="noopener">
+    <div class="icon">🧠</div><h3>View Artifact 2: Understanding Neural Networks ↗</h3>
+    <p>A visual introduction to neural network architecture, components, and learning.</p>
+  </a>
+  <a class="card portfolio-link current" href="https://tiru506.github.io/iwu-portfolio/artifacts/md/artifact-3-training-generative-ai-models.html" target="_blank" rel="noopener" aria-current="page">
+    <div class="icon">⚙️</div><h3>View Artifact 3: Training Generative AI Models ↗</h3>
+    <p>This artifact: an overview of LLM training steps, infrastructure, and resource costs.</p>
+  </a>
+</div>
+<p class="note" style="margin-top:14px">Portfolio note: This page is the third artifact in my professional portfolio.</p>
+</section>
+</main>
+<footer><b>Tirumala Raju Killamsetti</b><br>Professional Portfolio · Artifact 3: Training Generative AI Models<br>© 2026 Tirumala Raju Killamsetti. All rights reserved.</footer>
+</body></html>
